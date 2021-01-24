@@ -124,13 +124,15 @@ div.container {
 div.search-results-container{
   overflow: visible;
   display:inline-flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;;
+  justify-content: center;
 }
 
 div.item-container{
-  border:solid whitesmoke;
+  border:solid #8099CC;
+  background-color: #161616;
   width: 350px;
   margin: 4px;
   padding: 2px;
