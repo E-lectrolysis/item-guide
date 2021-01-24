@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Item Search or whatever</title>
+  <meta name="author" content="Electrolysis">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="title-container">
+    <h1 class="bigtitle">Big Title Here
+    </h1>
+  </div>
+  <div class="container">
+    <form class="searchform">
+      <div class="searchbar row">
+        <p>Item Search:</p>
+        <input type="text" id="big-search-bar" placeholder="Search for an item...">
+      </div>
+      <div class="filters row">
+        <div class= "filters-item">
+          <p>Category:</p>
+          <select>
+            <option value="">All</option>
+            <option value="weapon">Weapon</option>
+            <option value="Armor">Armor</option>
+          </select>
+        </div>
+        <div class= "filters-item">
+          <p>Sort By:</p>
+          <select>
+            <option value="Level">Level</option>
+            <option value="weapon">Some ID</option>
+            <option value="Armor">Some other ID</option>
+          </select>
+        </div>
+        <div class= "filters-item">
+          <p>Min. Lvl:</p>
+          <input type="number" pplaceholder="Level" value="0">
+        </div>
+        <div class= "filters-item">
+          <p>Max. Lvl:</p>
+          <input type="number" placeholder="Level" value="420">
+        </div>
+      </div>
+      <div class="buttons row">
+        <button type="submit">Search</button>
+        <button type="reset" id="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+  <div class="title-container">
+    <h2 class="bigtitle">Search Results
+    </h2>
+  </div>
+  <div class="search-results-container">
+    <h2 class="bigtitle">Placeholder lul
+    </h2>
+    <h2 class="bigtitle">Placeholder lul
+    </h2>
+  </div>
+</body>
+
+</html>

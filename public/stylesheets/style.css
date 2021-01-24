@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #252526;
+  display: block;
+  margin:auto;
+}
+
+h1, h2 {
+  color: gainsboro;
+}
+
+p{
+  color: lightgray;
+  font-size: 16px;
+  text-align: left;
+  margin-inline: 4px;
+}
+
+h1.bigtitle {
+  width:100%;
+  height:0%;
+  font-style: bold;
+  font-size: 69px;
+  font-size: 4vw;
+  margin:auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+  margin: 1px;
+}
+
+div.row {
+  display:inline-flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 2px;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 4px;
+  margin-top:3px;
+  overflow: hidden;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+div.row input, div.buttons button{
+  margin-inline: 4px;
+  padding: 7px;
+  border: none;
+}
+
+div.row input, div.row select {
+  background-color: #505050;
+  font-size: 17px;
+  color: white;
+  width:100%;
+  height:40px;
+  text-align: left;
+}
+
+
+div.row input#big-search-bar {
+  height:60px;
+}
+
+div.filters-item {
+  padding: 4px;
+  align-self: center;
+  flex-grow: 1;
+  width: fit-content;
+  vertical-align:middle;
+  margin-inline: 4px;
+}
+
+::placeholder {
+  color: lightgray;
+  opacity: 1;
+}
+
+div.buttons button {
+  width:100%;
+  float:center;
+  text-align: center;
+  justify-self: center;
+  font-size: 19px;
+  height:50px;
+  background-color:#335588;
+  color:white;
+}
+
+div.buttons button#reset {
+  background-color:#883333;
+}
+
+div.title-container, div.container {
+  width: 90%;
+  margin:auto;
+  padding: 20px;
+}
+
+div.title-container {
+  text-align: center;
+}
+
+div.container {
+  border:solid;
+  border-color: ghostwhite;
+  margin:auto;
+  display:block;
+  height: fit-content;
+}
+
+div.search-results-container{
+  overflow: visible;
+  display:inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  border:solid blue;
+}
