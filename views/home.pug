@@ -1,0 +1,132 @@
+-
+    let IDs = ["a", "b", 
+    "c",
+    "d"
+    ];
+    let varToName = {
+        "sockets":"Powder Slots",
+        "addedLore":"Lore",
+        "damage":"Neutral",
+        "earthDamage":"Earth Damage"
+        "thunderDamage":"Thunder Damage"
+        "waterDamage":"Water Damage"
+        "fireDamage":"Fire Damage"
+        "airDamage":"Air Damage"
+        "strength": "Strength",
+        "dexterity": "Dexterity",
+        "intelligence": "Intelligence",
+        "defense": "Defense",
+        "agility": "Agility"
+    };
+    let minID = function(i) {
+        if(i<0) {
+            return Math.floor(1.3*i);
+        } else {
+            return Math.floor(0.3*i);
+        }
+    };
+    let maxID = function(i) {
+        if(i<0) {
+
+        }
+    };
+
+    String.prototype.capitalize = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    };
+doctype html
+html
+head
+    meta(charset="utf-8")
+    title Wynn Items
+    meta(name="author" content="Electrolysis")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="stylesheets/style.css" rel="stylesheet")
+body
+    .title-container
+        h1.bigtitle
+            | Big Title Here
+    .container
+        form.searchform
+            .searchbar.row
+                p.tag Item Search:
+                input#big-search-bar(type="text" placeholder="Search for an item...")
+            .filters.row
+                .filters-item
+                    p.tag Category:
+                    select
+                        option(value="") All
+                        option(value="weapon") Weapon
+                        option(value="Armor") Armor
+                .filters-item
+                    p.tag Sort By:
+                    select
+                        option(value="Level") Level
+                        option(value="weapon") Some ID
+                        option(value="Armor") Some other ID
+                .filters-item
+                    p.tag Min. Lvl:
+                    input(type="number" pplaceholder="Level" value="0")
+                .filters-item
+                    p.tag Max. Lvl:
+                    input(type="number" placeholder="Level" value="420")
+            .buttons.row
+                button(type="submit") Search
+                button#reset(type="reset") Reset
+    .title-container
+        h2.bigtitle
+            | Search Results
+    .search-results-container
+        .item-container
+            h2.mythic Bignis
+            p.other-stats
+                | Super Average Attack Speed
+                br
+                | I guess idk
+            p.other-stats
+                b.fire Fire
+                |  Damage: 420-666
+            p.other-stats Level Req: 2000
+            table.item-stats
+                tr
+                    td.left.positive 30
+                    td.center.idname Nuts per second
+                    td.right.positive 130
+                tr
+                    td.left.negative 30%
+                    td.center.idname Being Bad
+                    td.right.negative 130%
+            p.other-stats
+                | 4 Powder Slots
+            p.mythic.category
+                | Mythic Bow
+            p.lore
+                | EHfusehfosijfhsoe sefseifhesf llmao this is an some kind of item idk loeoflefolfosefoeslfo
+        .item-container
+            h2.legendary Libruh
+            p.other-stats Level Req: 2000
+            table.item-stats
+                tr
+                    td.left.positive 30
+                    td.center.idname
+                        b.water Water
+                            |  succ
+                    td.right.positive 130
+                tr
+                    td.left.negative 30000%
+                    td.center.idname
+                        | Being 
+                        b.fire Fire
+                        |  Bad
+                    td.right.negative 130000%
+            //display of results starts here
+        each item in items
+            .item-container
+                h2(class=item.tier.toLowerCase())
+                    if item.hasOwnProperty("displayName")  && item.displayName !== undefined && item.displayName !== null && item.displayName !== ""
+                        | #{item.displayName}
+                    else
+                        | #{item.name}
+                if item.sockets !== null && item.sockets > 0
+                    p.other-stats #{item.sockets} Powder Slots

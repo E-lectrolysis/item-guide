@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let itemStuff = require('./item');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function(req, res, next) {
+  if(req.query.name === undefined) {
+    req.query.name = "";
+  }
+  
+  let items = await itemStuff.searchItem(req.query.name);
+  console.log(items);
+  res.render('home', {"items": items});
 });
 
 module.exports = router;
