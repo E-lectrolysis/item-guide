@@ -14,7 +14,7 @@ h1, h2 {
   color: gainsboro;
 }
 
-p{
+p.tag{
   color: lightgray;
   font-size: 16px;
   text-align: left;
@@ -126,6 +126,122 @@ div.search-results-container{
   display:inline-flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  border:solid blue;
+  justify-content: center;;
+}
+
+div.item-container{
+  border:solid whitesmoke;
+  width: 350px;
+  margin: 4px;
+  padding: 2px;
+  text-align: center;
+}
+
+table.item-stats{
+  table-layout: fixed;
+  width:100%
+}
+
+span.numbers {
+  font-weight: normal;
+}
+
+h2.item-name {
+
+}
+
+p.category, p.other-stats, p.lore{
+  padding-inline:5px;
+  text-align: left;
+}
+
+
+p.category, p.other-stats{
+  font-weight: bold;
+}
+
+p.category {
+  font-size: 19px;
+}
+
+p.other-stats{
+  color: lightgray;
+}
+
+p.lore{
+  text-align: left;
+  font-style:italic;
+  color: #CCCCCC
+}
+
+.mythic {
+  color:#bc3edb;
+}
+.fabled, .fire {
+  color:tomato;
+}
+
+.legendary, .water {
+  color:cyan;
+}
+
+.rare{
+  color:hotpink;
+}
+
+.unique, .thunder{
+  color:gold;
+}
+
+.set{
+  color:lightgreen;
+}
+
+.common, .air{
+  color:whitesmoke;
+}
+
+.earth{
+  color:green;
+}
+
+.neutral{
+  color:goldenrod;
+}
+
+td{
+  padding-inline:5px;
+  vertical-align: middle;
+  overflow:hidden;
+  font-weight: bold;
+}
+
+td.left{
+  color:whitesmoke;
+  text-align: left;
+}
+
+td.center {
+  text-align: center;
+  width:69%;
+}
+
+td.right {
+  text-align: right;
+  float:right;
+}
+
+td.positive{
+  color:lightgreen
+}
+
+td.negative{
+  color:#ff3e3e
+}
+
+td.idname{
+  color:lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
 }
