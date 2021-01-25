@@ -223,7 +223,7 @@ body
                     input(type="number" placeholder="Level" value="420" disabled)
             .buttons.row
                 button(type="submit") Search
-                button#reset(type="reset") Reset
+                button#reset(type="cancel" onclick="window.location='/';return false;") Reset
     .title-container
         h2.bigtitle
             | #{items.length} Results

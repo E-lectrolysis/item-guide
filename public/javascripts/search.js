@@ -9,3 +9,8 @@ function search() {
     window.location.href = '/?name=' + param;
     return false;
 }
+
+function reset() {
+    window.location.href = '/';
+    return false;
+}
