@@ -193,35 +193,34 @@ head
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="stylesheets/style.css" rel="stylesheet")
 body
+    script(src="./javascripts/search.js")
     .title-container
         h1.bigtitle
             | Wynn Items
         h3
             | By Electrolysis (Still under construction lol)
     .container
-        form.searchform
+        form.searchform(onsubmit="return search()")
             .searchbar.row
                 p.tag Item Search:
                 input#big-search-bar(type="text" placeholder="Search for an item...")
             .filters.row
                 .filters-item
                     p.tag Category:
-                    select#search-category
+                    select#search-category(disabled)
                         option(value="") All
-                        option(value="weapon") Weapon
-                        option(value="armor") Armor
-                        option(value="accessory") Accessory
+                        option(value="") More Options Coming Soon
                 .filters-item
                     p.tag Sort By:
-                    select#sortby
+                    select#sortby(disabled)
                         option(value="level") Level
                         option(value="level") More Options Coming Soon
                 .filters-item
                     p.tag Min. Lvl:
-                    input(type="number" pplaceholder="Level" value="0")
+                    input(type="number" placeholder="Level" value="0" disabled)
                 .filters-item
                     p.tag Max. Lvl:
-                    input(type="number" placeholder="Level" value="420")
+                    input(type="number" placeholder="Level" value="420" disabled)
             .buttons.row
                 button(type="submit") Search
                 button#reset(type="reset") Reset

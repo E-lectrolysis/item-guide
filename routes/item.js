@@ -9,7 +9,7 @@ async function searchItem(name) {
     if(name === undefined || name === null || name === "") {
         params.category = "all";
     } else {
-        params.name = name;
+        params.search = name;
     }
 
 

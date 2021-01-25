@@ -9,7 +9,6 @@ router.get('/', async function(req, res, next) {
   }
   
   let items = await itemStuff.searchItem(req.query.name);
-  console.log(items);
   res.render('home', {"items": items});
 });
 
