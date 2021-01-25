@@ -10,7 +10,7 @@ body {
   margin:auto;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: gainsboro;
 }
 
@@ -32,6 +32,10 @@ h1.bigtitle {
 
 a {
   color: #00B7FF;
+}
+
+p {
+  line-height: 20px;
 }
 
 input {
@@ -163,13 +167,13 @@ p.category {
 }
 
 p.other-stats{
-  color: lightgray;
+  color: #CCCCCC;
 }
 
 p.lore{
   text-align: left;
   font-style:italic;
-  color: #CCCCCC
+  color: #AAAAAA
 }
 
 .mythic {
@@ -188,14 +192,14 @@ p.lore{
 }
 
 .unique, .thunder{
-  color:gold;
+  color:yellow;
 }
 
 .set{
   color:lightgreen;
 }
 
-.common, .air{
+.normal, .air{
   color:whitesmoke;
 }
 
@@ -204,7 +208,11 @@ p.lore{
 }
 
 .neutral{
-  color:goldenrod;
+  color:rgb(255, 183, 0);
+}
+
+.health{
+  color:#CC0000
 }
 
 td{
@@ -233,7 +241,8 @@ td.positive{
   color:lightgreen
 }
 
-td.negative{
+td.negative, .restriction{
+  font-size: 16px;
   color:#ff3e3e
 }
 
@@ -241,5 +250,5 @@ td.idname{
   color:lightgray;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }

@@ -1,17 +1,5 @@
 -
-    let IDs = ["a", "b", 
-    "c",
-    "d"
-    ];
-    let varToName = {
-        "sockets":"Powder Slots",
-        "addedLore":"Lore",
-        "damage":"Neutral",
-        "earthDamage":"Earth",
-        "thunderDamage":"Thunder",
-        "waterDamage":"Water",
-        "fireDamage":"Fire",
-        "airDamage":"Air",
+    let idToName = {
         damageBonus: "Main Attack Damage",
         damageBonusRaw: "Raw Main Attack Damage",
         spellDamage: "Spell Damage",
@@ -24,17 +12,17 @@
         lifeSteal: "Life Steal",
         manaRegen: "Mana Regen",
         manaSteal: "Mana Steal",
-        spellCostPct1: "-1st Spell Cost",
-        spellCostRaw1: "-1st Spell Cost",
-        spellCostPct2: "-2nd Spell Cost",
-        spellCostRaw2: "-2nd Spell Cost",
-        spellCostPct3: "-3rd Spell Cost",
-        spellCostRaw3: "-3rd Spell Cost",
-        spellCostPct4: "-4th Spell Cost",
-        spellCostRaw4: "-4th Spell Cost",
+        spellCostPct1: "1st Spell Cost",
+        spellCostRaw1: "1st Spell Cost",
+        spellCostPct2: "2nd Spell Cost",
+        spellCostRaw2: "2nd Spell Cost",
+        spellCostPct3: "3rd Spell Cost",
+        spellCostRaw3: "3rd Spell Cost",
+        spellCostPct4: "4th Spell Cost",
+        spellCostRaw4: "4th Spell Cost",
         thorns: "Thorns",
         reflection: "Reflection",
-        attackSpeedBonus: "+Tier Attack Speed",
+        attackSpeedBonus: "Attack Speed",
         speed: "Walk Speed",
         exploding: "Exploding",
         soulPoints: "Soul Point Regen",
@@ -46,17 +34,64 @@
         lootQuality: "Loot Quality",
         emeraldStealing: "Stealing",
         gatherXpBonus: "Gather XP Bonus",
-        gatherSpeed: "Gather Speed",
-        bonusEarthDamage: "Earth",
-        bonusThunderDamage: "Thunder",
-        bonusWaterDamage: "Water",
-        bonusFireDamage: "Fire",
-        bonusAirDamage: "Air",
-        bonusEarthDefense: "Earth",
-        bonusThunderDefense: "Thunder",
-        bonusWaterDefense: "Water",
-        bonusFireDefense: "Fire",
-        bonusAirDefense: "Air"
+        gatherSpeed: "Gather Speed"
+    };
+
+    let suffixes = {
+        damageBonus: "%",
+        damageBonusRaw: "",
+        spellDamage: "%",
+        spellDamageRaw: "",
+        rainbowSpellDamageRaw: "",
+        healthRegen: "%",
+        healthRegenRaw: "",
+        healthBonus: "",
+        poison: "/3s",
+        lifeSteal: "/4s",
+        manaRegen: "/4s",
+        manaSteal: "/4s",
+        spellCostPct1: "%",
+        spellCostRaw1: "",
+        spellCostPct2: "%",
+        spellCostRaw2: "",
+        spellCostPct3: "%",
+        spellCostRaw3: "",
+        spellCostPct4: "%",
+        spellCostRaw4: "",
+        thorns: "%",
+        reflection: "%",
+        attackSpeedBonus: " tier",
+        speed: "%",
+        exploding: "%",
+        soulPoints: "%",
+        sprint: "%",
+        sprintRegen: "%",
+        jumpHeight: "",
+        xpBonus: "%",
+        lootBonus: "%",
+        lootQuality: "%",
+        emeraldStealing: "%",
+        gatherXpBonus: "%",
+        gatherSpeed: "%",
+        bonusEarthDamage: "%",
+        bonusThunderDamage: "%",
+        bonusWaterDamage: "%",
+        bonusFireDamage: "%",
+        bonusAirDamage: "%",
+        bonusEarthDefense: "%",
+        bonusThunderDefense: "%",
+        bonusWaterDefense: "%",
+        bonusFireDefense: "%",
+        bonusAirDefense: "%"
+    };
+
+    let damages = {
+        "damage":"Neutral",
+        "earthDamage":"Earth",
+        "thunderDamage":"Thunder",
+        "waterDamage":"Water",
+        "fireDamage":"Fire",
+        "airDamage":"Air"
     };
 
     let skillPoints = {
@@ -64,23 +99,84 @@
         "dexterity": "Dexterity",
         "intelligence": "Intelligence",
         "defense": "Defense",
-        "agility": "Agility",
+        "agility": "Agility"
+    };
+
+    let bonusSkillPoints = {
         "strengthPoints": "Strength",
         "dexterityPoints": "Dexterity",
         "intelligencePoints": "Intelligence",
         "defensePoints": "Defense",
         "agilityPoints": "Agility"
     };
+
+    let eleDefs = {
+        "earthDefense": "Earth",
+        "thunderDefense": "Thunder",
+        "waterDefense": "Water",
+        "fireDefense": "Fire",
+        "airDefense": "Air"
+    };
+
+    let elementIDs = {
+        bonusEarthDamage: "Earth",
+        bonusThunderDamage: "Thunder",
+        bonusWaterDamage: "Water",
+        bonusFireDamage: "Fire",
+        bonusAirDamage: "Air",
+    };
+
+    let eleDefIDs = {
+        bonusEarthDefense: "Earth",
+        bonusThunderDefense: "Thunder",
+        bonusWaterDefense: "Water",
+        bonusFireDefense: "Fire",
+        bonusAirDefense: "Air"
+    };
+
+
+    let classReqs = {
+        "bow": "Archer",
+        "dagger": "Assassin",
+        "relik": "Shaman",
+        "spear": "Warrior",
+        "wand": "Mage"
+    };
+
+    let attackSpeeds={
+        "SUPER_SLOW": "Super Slow",
+        "VERY_SLOW": "Very Slow",
+        "SLOW": "Slow",
+        "NORMAL": "Normal",
+        "FAST": "Fast",
+        "VERY_FAST": "Very Fast",
+        "SUPER_FAST": "Super Fast"
+    };
+
+    let inverse = ["spellCostPct1", "spellCostRaw1", "spellCostPct2", "spellCostRaw2", "spellCostPct3", "spellCostRaw3", "spellCostPct4", "spellCostRaw4"]
     let minID = function(i) {
         if(i<0) {
-            return Math.floor(1.3*i);
+            return Math.round(1.3*i);
         } else {
-            return Math.floor(0.3*i);
+            return Math.max(Math.round(0.3*i),1);
         }
     };
     let maxID = function(i) {
         if(i<0) {
+            return Math.round(0.7*i)
+        } else {
+            return Math.round(1.3*i)
+        }
+    };
 
+    let negPos = function(key, num) {
+        if(inverse.includes(key)) {
+            num = - num;
+        }
+        if(num >= 0) {
+            return "positive";
+        } else {
+            return "negative";
         }
     };
 
@@ -100,6 +196,8 @@ body
     .title-container
         h1.bigtitle
             | Wynn Items
+        h3
+            | By Electrolysis (Still under construction lol)
     .container
         form.searchform
             .searchbar.row
@@ -108,16 +206,16 @@ body
             .filters.row
                 .filters-item
                     p.tag Category:
-                    select
+                    select#search-category
                         option(value="") All
                         option(value="weapon") Weapon
-                        option(value="Armor") Armor
+                        option(value="armor") Armor
+                        option(value="accessory") Accessory
                 .filters-item
                     p.tag Sort By:
-                    select
-                        option(value="Level") Level
-                        option(value="weapon") Some ID
-                        option(value="Armor") Some other ID
+                    select#sortby
+                        option(value="level") Level
+                        option(value="level") More Options Coming Soon
                 .filters-item
                     p.tag Min. Lvl:
                     input(type="number" pplaceholder="Level" value="0")
@@ -131,49 +229,7 @@ body
         h2.bigtitle
             | #{items.length} Results
     .search-results-container
-        .item-container
-            h2.mythic Bignis
-            p.other-stats
-                | Super Average Attack Speed
-                br
-                | I guess idk
-            p.other-stats
-                b.fire Fire
-                |  Damage: 420-666
-            p.other-stats Level Req: 2000
-            table.item-stats
-                tr
-                    td.left.positive 30
-                    td.center.idname Nuts per second
-                    td.right.positive 130
-                tr
-                    td.left.negative 30%
-                    td.center.idname Being Bad
-                    td.right.negative 130%
-            p.other-stats
-                | 4 Powder Slots
-            p.mythic.category
-                | Mythic Bow
-            p.lore
-                | EHfusehfosijfhsoe sefseifhesf llmao this is an some kind of item idk loeoflefolfosefoeslfo
-        .item-container
-            h2.legendary Libruh
-            p.other-stats Level Req: 2000
-            table.item-stats
-                tr
-                    td.left.positive 30
-                    td.center.idname
-                        b.water Water
-                            |  succ
-                    td.right.positive 130
-                tr
-                    td.left.negative 30000%
-                    td.center.idname
-                        | Being 
-                        b.fire Fire
-                        |  Bad
-                    td.right.negative 130000%
-            //display of results starts here
+        //display of results starts here
         each item in items
             .item-container
                 h2(class=item.tier.toLowerCase())
@@ -181,5 +237,100 @@ body
                         | #{item.displayName}
                     else
                         | #{item.name}
+                //base stats
+                if item.category.toLowerCase() === "weapon" 
+                    //attack speed for weapons
+                    p.other-stats#attackspeed #{attackSpeeds[item.attackSpeed]} Attack Speed
+                p.other-stats#basestats
+                    if item.category.toLowerCase() !== "weapon"
+                        if item.health !== 0
+                            span.health Health: #{item.health}
+                            br
+                        each val, key in eleDefs
+                            if item[key] !== undefined && item[key] !== null && item[key] !== 0
+                                span(class=val.toLowerCase()) #{val} 
+                                | Defense: #{item[key]}
+                                br
+                    else
+                        each val, key in damages 
+                            if item[key] !== undefined && item[key] !== null && item[key] != ('0-0')
+                                span(class=val.toLowerCase()) #{val} 
+                                | Damage: #{item[key]}
+                                br
+                //requirements
+                p.other-stats#sp
+                    if (item.classRequirement !== undefined && item.classRequirement !== null) || item.category.toLowerCase() === "weapon"
+                        | Class Req: 
+                        if item.classRequirement !== null
+                            | #{item.classRequirement}
+                        else
+                            | #{classReqs[item.type.toLowerCase()]}
+                        br
+                    |Combat Lv. Min: #{item.level}
+                    br
+                    if item.quest !== undefined && item.quest !== null
+                        | Quest Req: #{item.quest}
+                        br
+                    each val, key in skillPoints
+                        if item[key] !== undefined && item[key] !== null && item[key] !== 0
+                            |#{val} Min: #{item[key]} 
+                            br
+                //non-elemental stats and such
+                table.item-stats
+                    each val, key in idToName
+                        if item[key] !== undefined && item[key] !== null && item[key] !== 0
+                            - let currNegPos = negPos(key, item[key]);
+                            if item.identified
+                                tr
+                                    td(class="left idname") #{val}
+                                    td(class="right " + currNegPos) #{item[key]}#{suffixes[key]}
+                            else
+                                tr
+                                    td(class="left " + currNegPos) #{minID(item[key])}#{suffixes[key]}
+                                    td(class="center idname") #{val}
+                                    td(class="right " + currNegPos) #{maxID(item[key])}#{suffixes[key]}
+                    //elemental ids
+                    each val, key in elementIDs
+                        if item[key] !== undefined && item[key] !== null && item[key] !== 0
+                            - let currNegPos = negPos(key, item[key]);
+                            if item.identified
+                                tr
+                                    td(class="left idname")
+                                        b(class=val.toLowerCase()) #{val} 
+                                        | Damage
+                                    td(class="right " + currNegPos) #{item[key]}#{suffixes[key]}
+                            else
+                                tr
+                                    td(class="left " + currNegPos) #{minID(item[key])}#{suffixes[key]}
+                                    td(class="center idname") 
+                                        b(class=val.toLowerCase()) #{val} 
+                                        | Damage
+                                    td(class="right " + currNegPos) #{maxID(item[key])}#{suffixes[key]}
+                    each val, key in eleDefIDs
+                        if item[key] !== undefined && item[key] !== null && item[key] !== 0
+                            - let currNegPos = negPos(key, item[key]);
+                            if item.identified
+                                tr
+                                    td(class="left idname")
+                                        b(class=val.toLowerCase()) #{val} 
+                                        | Defense
+                                    td(class="right " + currNegPos) #{item[key]}#{suffixes[key]}
+                            else
+                                tr
+                                    td(class="left " + currNegPos) #{minID(item[key])}#{suffixes[key]}
+                                    td(class="center idname") 
+                                        b(class=val.toLowerCase()) #{val} 
+                                        | Defense
+                                    td(class="right " + currNegPos) #{maxID(item[key])}#{suffixes[key]}
                 if item.sockets !== null && item.sockets > 0
                     p.other-stats #{item.sockets} Powder Slots
+                p(class=item.tier.toLowerCase() + " category")
+                    if item.category !== "accessory"
+                        |#{item.tier.capitalize()} #{item.type.capitalize()}
+                    else
+                        |#{item.tier.capitalize()} #{item.accessoryType.capitalize()}
+                    if item.restrictions !== undefined && item.restrictions !== null && item.restrictions !== "" 
+                        br
+                        span.restriction #{item.restrictions.capitalize()}
+                if item.addedLore !== undefined && item.addedLore !== null && item.addedLore !== ""
+                    p.lore #{item.addedLore}
