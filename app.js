@@ -13,7 +13,7 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-const PORT = process.env.port || 80;
+const PORT = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,5 +43,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-console.log("server running on port " + PORT);
-app.listen(PORT);
+app.listen(PORT, err => {
+  if(err) throw err;
+  console.log("%c Server running", "color: green");
+});
