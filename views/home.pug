@@ -7,16 +7,69 @@
         "sockets":"Powder Slots",
         "addedLore":"Lore",
         "damage":"Neutral",
-        "earthDamage":"Earth Damage"
-        "thunderDamage":"Thunder Damage"
-        "waterDamage":"Water Damage"
-        "fireDamage":"Fire Damage"
-        "airDamage":"Air Damage"
+        "earthDamage":"Earth",
+        "thunderDamage":"Thunder",
+        "waterDamage":"Water",
+        "fireDamage":"Fire",
+        "airDamage":"Air",
+        damageBonus: "Main Attack Damage",
+        damageBonusRaw: "Raw Main Attack Damage",
+        spellDamage: "Spell Damage",
+        spellDamageRaw: "Raw Spell Damage",
+        rainbowSpellDamageRaw: "Rainbow Spell Damage",
+        healthRegen: "Health Regen",
+        healthRegenRaw: "Health Regen",
+        healthBonus: "Health",
+        poison: "Poison",
+        lifeSteal: "Life Steal",
+        manaRegen: "Mana Regen",
+        manaSteal: "Mana Steal",
+        spellCostPct1: "-1st Spell Cost",
+        spellCostRaw1: "-1st Spell Cost",
+        spellCostPct2: "-2nd Spell Cost",
+        spellCostRaw2: "-2nd Spell Cost",
+        spellCostPct3: "-3rd Spell Cost",
+        spellCostRaw3: "-3rd Spell Cost",
+        spellCostPct4: "-4th Spell Cost",
+        spellCostRaw4: "-4th Spell Cost",
+        thorns: "Thorns",
+        reflection: "Reflection",
+        attackSpeedBonus: "+Tier Attack Speed",
+        speed: "Walk Speed",
+        exploding: "Exploding",
+        soulPoints: "Soul Point Regen",
+        sprint: "Sprint",
+        sprintRegen: "Sprint Regen",
+        jumpHeight: "Jump Height",
+        xpBonus: "XP Bonus",
+        lootBonus: "Loot Bonus",
+        lootQuality: "Loot Quality",
+        emeraldStealing: "Stealing",
+        gatherXpBonus: "Gather XP Bonus",
+        gatherSpeed: "Gather Speed",
+        bonusEarthDamage: "Earth",
+        bonusThunderDamage: "Thunder",
+        bonusWaterDamage: "Water",
+        bonusFireDamage: "Fire",
+        bonusAirDamage: "Air",
+        bonusEarthDefense: "Earth",
+        bonusThunderDefense: "Thunder",
+        bonusWaterDefense: "Water",
+        bonusFireDefense: "Fire",
+        bonusAirDefense: "Air"
+    };
+
+    let skillPoints = {
         "strength": "Strength",
         "dexterity": "Dexterity",
         "intelligence": "Intelligence",
         "defense": "Defense",
-        "agility": "Agility"
+        "agility": "Agility",
+        "strengthPoints": "Strength",
+        "dexterityPoints": "Dexterity",
+        "intelligencePoints": "Intelligence",
+        "defensePoints": "Defense",
+        "agilityPoints": "Agility"
     };
     let minID = function(i) {
         if(i<0) {
@@ -46,7 +99,7 @@ head
 body
     .title-container
         h1.bigtitle
-            | Big Title Here
+            | Wynn Items
     .container
         form.searchform
             .searchbar.row
@@ -76,7 +129,7 @@ body
                 button#reset(type="reset") Reset
     .title-container
         h2.bigtitle
-            | Search Results
+            | #{items.length} Results
     .search-results-container
         .item-container
             h2.mythic Bignis

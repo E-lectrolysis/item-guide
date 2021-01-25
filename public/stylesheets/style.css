@@ -148,10 +148,6 @@ span.numbers {
   font-weight: normal;
 }
 
-h2.item-name {
-
-}
-
 p.category, p.other-stats, p.lore{
   padding-inline:5px;
   text-align: left;
