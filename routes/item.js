@@ -1,3 +1,8 @@
+/**
+ * @author Electrolysis
+ * 
+ */
+
 const axios = require('axios');
 
 
