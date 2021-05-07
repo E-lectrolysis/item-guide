@@ -3,27 +3,27 @@
  * 
  */
 
-const axios = require('axios');
+let allItems = require('./public_api.json');
 
-
-async function searchItem(name) {
-
-    params = {
-        "action": "itemDB"
+function searchItem(params) {
+    console.log(params);
+    if(params.name === undefined || params.name  === null || params.name === "") {
+        params.name = "";
     }
-    if(name === undefined || name === null || name === "") {
-        params.category = "all";
-    } else {
-        params.search = name;
+    let items = allItems.items.filter(x => x.name.toLowerCase().includes(params.name.toLowerCase()));
+    items = levelFilter(params.min, params.max, items);
+    if(params.sortBy !== "level" && params.sortBy != undefined) {
+        items = items.filter(x => x[params.sortBy] != undefined && x[params.sortBy] != 0);
+        items = items.sort((a, b) => b[params.sortBy]-a[params.sortBy]);
     }
-
-
-    let response = await axios.get('https://api.wynncraft.com/public_api.php', {
-        "params": params
-    })
-    let items = response.data.items
-    console.log("succ");
     return items;
+}
+
+function levelFilter(min, max, arr) {
+    if(min<=0 && max > 108) {
+        return arr;
+    }
+    return arr.filter(x => x.level >= min && x.level<= max);
 }
 
 module.exports= {searchItem};

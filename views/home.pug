@@ -212,15 +212,16 @@ body
                         option(value="") More Options Coming Soon
                 .filters-item
                     p.tag Sort By:
-                    select#sortby(disabled)
+                    select#sortby
                         option(value="level") Level
-                        option(value="level") More Options Coming Soon
+                        each val, key in idToName
+                            option(value=key) #{val} #{suffixes[key]}
                 .filters-item
                     p.tag Min. Lvl:
-                    input(type="number" placeholder="Level" value="0" disabled)
+                    input(id = "min-lvl" type="number" placeholder="Level" value="0" disabled)
                 .filters-item
                     p.tag Max. Lvl:
-                    input(type="number" placeholder="Level" value="420" disabled)
+                    input(id = "max-lvl" type="number" placeholder="Level" value="420" disabled)
             .buttons.row
                 button(type="submit") Search
                 button#reset(type="cancel" onclick="window.location='/';return false;") Reset
