@@ -15,15 +15,8 @@ router.get('/', function(req, res, next) {
     req.query.name = "";
   }
   
+
   let items = itemStuff.searchItem(req.query);
-  let min = 0;
-  let max = 150;
-  if(req.query.min !== undefined) {
-    min = req.query.min;
-  }
-  if(req.query.max !== undefined) {
-    max = req.query.max;
-  }
   res.render('home', {"items": items});
 });
 
